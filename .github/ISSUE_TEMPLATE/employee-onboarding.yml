@@ -1,0 +1,160 @@
+name: Employee Onboarding
+description: Create a new employee onboarding checklist
+title: "Onboarding: [EMPLOYEE NAME]"
+labels: ["onboarding", "hr"]
+assignees:
+  - stigbakken
+  - jgronbech
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Employee Onboarding Checklist
+
+        This issue tracks all onboarding tasks for a new hire at Sunstone Institute.
+
+  - type: input
+    id: employee_name
+    attributes:
+      label: Employee Name
+      description: Full name of the new hire
+      placeholder: "e.g., Jane Doe"
+    validations:
+      required: true
+
+  - type: input
+    id: start_date
+    attributes:
+      label: Start Date
+      description: First day of employment (YYYY-MM-DD)
+      placeholder: "e.g., 2025-01-15"
+    validations:
+      required: true
+
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      description: Job title/position
+      placeholder: "e.g., Data Scientist"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: employment_type
+    attributes:
+      label: Employment Type
+      options:
+        - Employee
+        - Contractor
+        - Intern
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## PHASE 1: Before Start Date (Pre-boarding)
+
+        **Timeline: T-2 weeks to T-1 day**
+
+        **Responsible: CEO and CTO**
+
+  - type: checkboxes
+    id: phase1_tasks
+    attributes:
+      label: Pre-boarding Tasks
+      options:
+        - label: "**[CEO] T-2 Weeks:** Send signed employment contract"
+        - label: "**[CEO] T-2 Weeks:** Fill in basic information in Adminkit (personal ID, address, contact info)"
+        - label: "**[CEO/Payroll] T-2 Weeks:** Register tax info from Skatteetaten"
+        - label: "**[CEO/Payroll] T-2 Weeks:** Obtain bank account information for salary payment"
+        - label: "**[CTO] T-1 Week:** Create user account and email address"
+        - label: "**[CTO] T-1 Week:** Set up standard password (send username to manager, password to employee)"
+        - label: "**[CTO] T-1 Week:** Add user to appropriate Google Workspace group (all-contractors/all-employees/all-interns)"
+        - label: "**[CTO] T-1 Week:** Add data scientists/engineers to gcp-devs group"
+        - label: "**[CTO] T-1 Week:** Add user to Employees org.unit in Google Workspace"
+        - label: "**[CTO] T-1 Week:** Add user's GitHub account to Google Workspace custom attribute"
+        - label: "**[CTO] T-1 Week:** Add user's ORCID to Google Workspace custom attribute"
+        - label: "**[CTO] T-1 Week:** Order/prepare laptop and monitors"
+        - label: "**[CTO] T-1 Week:** Install necessary software and security settings on laptop"
+        - label: "**[CEO] T-3 Days:** Prepare and activate access card for building/office"
+        - label: "**[CTO] T-3 Days:** Set up access in cloud-based systems (Google Drive, Figma, etc.)"
+        - label: "**[CEO] T-1 Day:** Place welcome gift and note on employee's desk"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## PHASE 2: Day 1 – Welcome and Administrative Setup
+
+        **Responsible: Manager and CEO**
+
+  - type: checkboxes
+    id: phase2_tasks
+    attributes:
+      label: Day 1 Tasks
+      options:
+        - label: "**[Manager] Morning:** Meet employee at entrance, give tour, present desk/workspace"
+        - label: "**[Manager] Morning:** Introduction to team in Standup"
+        - label: "**[CTO] Morning:** Assist with first login"
+        - label: "**[CTO] Morning:** Review company guidelines for passwords, security, and remote work"
+        - label: "**[CTO] Morning:** Hand over physical access card"
+        - label: "**[CEO] Mid-morning:** Complete outstanding HR documents (working hours, vacation policy, personal data)"
+        - label: "**[Finance] Lunchtime:** Brief introduction to accountant/payroll manager"
+        - label: "**[Finance] Lunchtime:** Review procedures for expense reports, reimbursements, time tracking"
+        - label: "**[Manager/Team] Lunchtime:** Shared team lunch"
+        - label: "**[Manager] Afternoon:** Present initial 30-day goals and company vision/strategy overview"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## PHASE 3: Week 1 – Systems, Culture, and Learning
+
+        **Responsible: Manager and Buddy/Mentor**
+
+  - type: checkboxes
+    id: phase3_tasks
+    attributes:
+      label: Week 1 Tasks
+      options:
+        - label: "**[Buddy] Day 2-3:** In-depth training on job-specific tools (Adminkit, etc.)"
+        - label: "**[Manager] Day 3:** Review company values, communication style, informal rules"
+        - label: "**[Manager] Day 3:** Explain organizational chart"
+        - label: "**[Manager] Day 4:** Set up 15-30 min meetings with key stakeholders in other departments"
+        - label: "**[CEO] Day 5:** Ensure employee knows how to register illness/vacation in Adminkit"
+        - label: "**[Manager] End of Week 1:** First 1-on-1 check-in on progress, answer questions, adjust pace"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## PHASE 4: Month 1 (30-Days) – Integration and Future Focus
+
+        **Responsible: Manager**
+
+  - type: checkboxes
+    id: phase4_tasks
+    attributes:
+      label: Month 1 Tasks
+      options:
+        - label: "**[Manager] End of Month 1:** 30-day goal review - evaluate initial goals"
+        - label: "**[Manager] End of Month 1:** Give concrete feedback on work completed and team integration"
+        - label: "**[Manager] End of Month 1:** Feedback session - ask employee for feedback on onboarding"
+        - label: "**[Manager] Start of Month 2:** Establish 60/90-day goals"
+        - label: "**[Manager] Start of Month 2:** Set up more advanced, independent goals for next two months"
+        - label: "**[Manager] Start of Month 2:** Formal introduction of annual/quarterly goals"
+        - label: "**[Manager] Start of Month 2:** Integrate employee's tasks with company's strategic goals"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any special requirements, equipment needs, or other notes
+      placeholder: "e.g., Remote employee, specific software needs, etc."
